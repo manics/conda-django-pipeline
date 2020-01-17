@@ -1,5 +1,5 @@
 {% set name = "django-pipeline" %}
-{% set version = "1.3.20" %}
+{% set version = "1.7.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: "09e4711192a7b4a8bf18298f16b0688ed19a6a3019c2fa4afdaad9d3882661c7"
+  sha256: "0ded22b974e3d627c27fc490ef5b23fcdcf0cdb00b704d628b5ca6d0b010d6fe"
 
 build:
   noarch: python
@@ -19,18 +19,18 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python =3
   run:
-    - futures >=2.1.3
-    - python
+    - django
+    - python =3
 
 test:
-  # imports:
-  #   - pipeline
-  #   - pipeline.compilers
-  #   - pipeline.compressors
-  #   - pipeline.jinja2
-  #   - pipeline.templatetags
+  imports:
+    - pipeline
+    # - pipeline.compilers
+    # - pipeline.compressors
+    # - pipeline.jinja2
+    # - pipeline.templatetags
 
 about:
   home: "https://github.com/cyberdelia/django-pipeline"
